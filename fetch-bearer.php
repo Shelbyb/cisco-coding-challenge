@@ -1,20 +1,12 @@
 <?php
+    // Import our autoloader which injects all dependencies and everything else we want
+    require 'vendor/autoload.php';
 
-// Import our autoloader which injects all dependencies and everything else we want
-require 'vendor/autoload.php';
+    // Using name spacing, import our Microsoft Connector class
+    use CiscoCodingChallenge\MicrosoftConnector;
 
-use CiscoCodingChallenge\MicrosoftConnector;
+    // Instantiate our Microsoft Connector class
+    $msLoginService = new MicrosoftConnector();
 
-// Instantiate our Microsoft Connector class
-$msLoginService = new MicrosoftConnector();
-
-// Let's login give the user creds in the .env file
-$login = $msLoginService->login();
-
-echo 'Bearer: ' . $login->access_token . PHP_EOL;
-
-
-
-
-
-
+    // Output our bearer token to the terminal
+    echo 'Bearer: ' . $msLoginService->accessToken() . PHP_EOL;

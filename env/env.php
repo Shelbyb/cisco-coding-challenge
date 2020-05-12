@@ -7,6 +7,7 @@ $variables = [
     'USER_PASSWORD' => 'makeworklesswork11!!',
 ];
 
+// Loop through all of our array of variables we want to be environment variables
 foreach ($variables as $key => $value) {
     putenv("$key=$value");
 }
